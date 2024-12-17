@@ -120,7 +120,7 @@ http://localhost:3334
 ## Authors
 
 - Project Idea - [Joseph Júnior](https://www.linkedin.com/in/j%C3%BAnior-ferreira-b23427250)
-- Audiovisual Content [Junior Motta](https://www.linkedin.com/in/junior-motta-439b9a269)
+- Audiovisual Content Creator [Junior Motta](https://www.linkedin.com/in/junior-motta-439b9a269)
 - UI/UX - [Yasmine](https://www.linkedin.com/in/yasminecoutinho)
 - Frontend - [Klayvem Guimarães](https://github.com/KlayvemGuimaraes)
 - Frontend - [Rayssa](https://github.com)
