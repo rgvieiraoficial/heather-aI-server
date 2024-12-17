@@ -1,4 +1,4 @@
-FROM node:20-slim
+FROM node:20-alpine3.20
 
 WORKDIR /usr/app
 
@@ -9,8 +9,6 @@ COPY yarn.lock ./
 RUN yarn
 
 COPY . .
-
-RUN apt-get update -y && apt-get install -y openssl
 
 RUN npx prisma generate
 
