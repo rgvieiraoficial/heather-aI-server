@@ -63,9 +63,9 @@ yarn install
 
 ### Create the environment variables.
 
-Create a copy of the .env.example file and rename it to .env.docker.
+Create a copy of the .env.example file and rename it to .env.local.
 
-Content of the .env file:
+Content of the .env.local file:
 
 ```bash
 #Server Port
@@ -75,6 +75,10 @@ PORT=3334
 POSTGRES_USER=
 POSTGRES_PASSWORD=
 POSTGRES_DB=
+
+#PGADMIN
+PGADMIN_DEFAULT_EMAIL=
+PGADMIN_DEFAULT_PASSWORD=
 
 #Secret Token
 SECRET_TOKEN=
@@ -89,7 +93,7 @@ Create another file named .env containing only the External Database Connection 
 #Prisma
 DATABASE_URL="postgresql://johndoe:randompassword@localhost:5432/mydb?schema=public"
 ```
-Important: In the env.docker file, the Database Connection URI should have the Host as "main-db" (or the name of the Docker service you define), while in the .env file, the Host should be "localhost." This will allow you to run migrations from the terminal of the computer running Docker while developing the project.
+Important: In the env.local file, the Database Connection URI should have the Host as "main-db" (or the name of the Docker service you define), while in the .env file, the Host should be "localhost." This will allow you to run migrations from the terminal of the computer running Docker while developing the project.
 
 ### Bring up the Docker containers.
 

@@ -10,6 +10,6 @@ RUN yarn
 
 COPY . .
 
-EXPOSE 3334
+EXPOSE 3354
 
 CMD ["yarn","start"]
