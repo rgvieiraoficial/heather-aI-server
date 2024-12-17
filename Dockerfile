@@ -10,6 +10,10 @@ RUN yarn
 
 COPY . .
 
+RUN apt-get update -y && apt-get install -y openssl
+
+RUN npx prisma generate
+
 EXPOSE 3354
 
 CMD ["yarn","start"]

@@ -3,10 +3,10 @@ import { HelloWorldEventService } from './helloWorldEvent.service';
 
 @Controller()
 export class HelloWorldEventController {
-  constructor(private readonly helloWorldEventService: HelloWorldEventService) {};
+  constructor(private readonly helloWorldEventService: HelloWorldEventService) { };
 
   @Get()
-  getHello(): string {
+  async getHello(): Promise<object> {
     return this.helloWorldEventService.getHello();
   }
 }

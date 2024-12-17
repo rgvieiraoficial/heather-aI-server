@@ -1,14 +1,9 @@
 import { Module } from '@nestjs/common';
-import { HelloWorldEventModule } from './modules/hello/useCases/helloWorldEvent/helloWorldEvent.module';
-import { RouterModule } from '@nestjs/core';
+
+import { modules } from './modules';
 
 @Module({
-  imports: [
-    HelloWorldEventModule,
-    RouterModule.register([
-      { path: '/', module: HelloWorldEventModule },
-    ]),
-  ],
+  imports: modules,
 })
 
-export class AppModule {};
+export class AppModule { };
