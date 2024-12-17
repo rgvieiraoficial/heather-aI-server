@@ -123,6 +123,6 @@ http://localhost:3334
 - Audiovisual Content Creator [Junior Motta](https://www.linkedin.com/in/junior-motta-439b9a269)
 - UI/UX - [Yasmine](https://www.linkedin.com/in/yasminecoutinho)
 - Frontend - [Klayvem Guimarães](https://github.com/KlayvemGuimaraes)
-- Frontend - [Rayssa](https://github.com)
+- Frontend - [Rayssa](https://github.com/rayssabuarque)
 - Backend - [Yami Renato](https://github.com/rgvieiraoficial)
 - Database Diagram - [Josias](https://github.com/josiasdev)
