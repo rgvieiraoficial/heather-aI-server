@@ -1,0 +1,33 @@
+services:
+  main-service:
+    container_name: 'main-service'
+    build: .
+    ports:
+      - 3354:3354
+    env_file: '.env'
+    volumes:
+      - .:/usr/app
+    networks:
+      - app-tier
+    depends_on:
+      - main-db
+
+  main-db:
+    image: postgres:12.4-alpine
+    container_name: 'main-db'
+    restart: always
+    ports:
+      - 5432:5432
+    env_file: '.env'
+    networks:
+      - app-tier
+    volumes:
+      - pgdata:/data/postgres
+
+networks:
+  app-tier:
+    driver: bridge
+
+volumes:
+  pgdata:
+    driver: local

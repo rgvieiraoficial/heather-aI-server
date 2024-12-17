@@ -1,0 +1,32 @@
+services:
+  main-service:
+    ports:
+      - 3354:3354
+    env_file: '.env.local'
+    stdin_open: true
+    tty: true
+    volumes:
+      - .:/app
+    working_dir: /app
+
+  main-db:
+    ports:
+      - 5436:5432
+    env_file: '.env.local'
+
+  pgadmin:
+    image: dpage/pgadmin4:6.15
+    environment:
+      PGADMIN_DEFAULT_EMAIL: 'admin@admin.com'
+      PGADMIN_DEFAULT_PASSWORD: 'admin#6563'
+    ports:
+      - '9825:80'
+    depends_on:
+      - main-db
+    networks:
+      - app-tier
+    volumes:
+      - ./pgadmin:/pgadmin
+
+volumes:
+  postgres_data_sc: {}
