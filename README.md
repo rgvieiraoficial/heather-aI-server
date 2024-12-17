@@ -1,73 +1,122 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+<!-- PROJECT LOGO -->
+<div>
+  <div align="center">
+    <a href="https://github.com/othneildrew/Best-README-Template">
+      <img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" />
+    </a>
+  </div>
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+  <h3 align="center">Heather AI</h3>
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+  <p align="center">
+    This repository contains the backend for an AI-powered digital tutor, integrated with an advanced LLM-based chatbot.
+ <br />
+    <br />
+      <a href="https://github.com">View Frontend</a>
+      ·
+      <a href="https://github.com">Report Bug</a>
+      ·
+      <a href="https://github.com">Request Feature</a>
+  </p>
+</div>
 
-## Description
+<!-- ABOUT THE PROJECT -->
+## About The Project
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+With the rapid growth of the blockchain ecosystem, the XRP Ledger (XRPL) has become a prominent platform for fast and secure transactions, asset issuance, and decentralized financial solutions. However, for many users, the technical complexity and learning curve associated with the usability of major projects on the XRPL remain significant barriers to adoption.
 
-## Installation
+To address this challenge, we propose the creation of an innovative AI agent that will serve as a personalized digital tutor, integrated with an advanced LLM-based chatbot. This tutor will be designed to guide users intuitively and efficiently within the XRPL ecosystem, ensuring that even those with little or no technical experience can easily navigate the platform's features.
+
+### Built With
+
+The following languages, frameworks, and technologies were used to build the backend:
+
+[![Node.js Badge](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org)
+<br/>
+[![TypeScript Badge](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org)
+<br/>
+[![NestJS Badge](https://img.shields.io/badge/nestjs-%23E0234E.svg?style=for-the-badge&logo=nestjs&logoColor=white)](https://nestjs.com)
+<br/>
+[![Prisma Badge](https://img.shields.io/badge/Prisma-3982CE?style=for-the-badge&logo=Prisma&logoColor=white)](https://www.prisma.io)
+<br/>
+[![Postgres Badge](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)](https://www.postgresql.org)
+<br/>
+[![Docker Badge](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com)
+
+## Running the project.
+
+To run the project, follow these steps:
+
+### Clone the repository
 
 ```bash
-$ yarn install
+git clone https://github.com/rgvieiraoficial/heather-ai-server.git
 ```
 
-## Running the app
+### Install the dependencies.
 
 ```bash
-# development
-$ yarn run start
+cd heather-ai-server
 
-# watch mode
-$ yarn run start:dev
-
-# production mode
-$ yarn run start:prod
+yarn install
 ```
 
-## Test
+### Create the environment variables.
+
+Create a copy of the .env.example file and rename it to .env.docker.
+
+Content of the .env file:
 
 ```bash
-# unit tests
-$ yarn run test
+#Server Port
+PORT=3334
 
-# e2e tests
-$ yarn run test:e2e
+#PostgreSQL
+POSTGRES_USER=
+POSTGRES_PASSWORD=
+POSTGRES_DB=
 
-# test coverage
-$ yarn run test:cov
+#Secret Token
+SECRET_TOKEN=
+
+#Prisma
+DATABASE_URL="postgresql://johndoe:randompassword@main-db:5432/mydb?schema=public"
 ```
 
-## Support
+Create another file named .env containing only the External Database Connection URI (Outside of Docker) to be able to use the Prisma CLI.
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+```bash
+#Prisma
+DATABASE_URL="postgresql://johndoe:randompassword@localhost:5432/mydb?schema=public"
+```
+Important: In the env.docker file, the Database Connection URI should have the Host as "main-db" (or the name of the Docker service you define), while in the .env file, the Host should be "localhost." This will allow you to run migrations from the terminal of the computer running Docker while developing the project.
 
-## Stay in touch
+### Bring up the Docker containers.
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+```bash
+docker compose up
+```
 
-## License
+### Run the Database Migrations.
 
-Nest is [MIT licensed](LICENSE).
+```bash
+npx prisma migrate dev
+```
+
+### Access the server's "Health Check" page.
+
+```bash
+http://localhost:PORT
+
+Example:
+
+http://localhost:3334
+```
+
+## Authors
+
+- Project Idea - [Júnior](https://github.com/rgvieiraoficia)
+- Frontend - [Klayvem Guimarães](https://github.com/KlayvemGuimaraes)
+- Frontend - [Rayssa](https://github.com)
+- Backend - [Yami Renato](https://github.com/rgvieiraoficia)
+- Database Diagram - [Josias](https://github.com)
