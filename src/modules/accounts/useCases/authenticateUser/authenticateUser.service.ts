@@ -46,6 +46,7 @@ export class AuthenticateUserService {
 
     const payload = {
       sub: user.id,
+      nickname: user.nickname,
       wallet_address: user.wallet_address,
     };
 

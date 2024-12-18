@@ -33,7 +33,7 @@ enum UserRole {
 
 model Transactions {
   id                         String            @id @default(uuid())
-  destination_wallet_address String            @unique
+  destination_wallet_address String
   transaction_type           TransactionType
   amount                     BigInt
   currency                   String
