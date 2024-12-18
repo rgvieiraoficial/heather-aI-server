@@ -15,17 +15,41 @@ datasource db {
 }
 
 model User {
-  id             String   @id @default(uuid())
-  nickname       String   @unique
-  wallet_address String   @unique
+  id             String         @id @default(uuid())
+  nickname       String         @unique
+  wallet_address String         @unique
   account_type   String
   password       String
-  role           UserRole @default(USER)
-  createdAt      DateTime @default(now())
-  updatedAt      DateTime @updatedAt
+  role           UserRole       @default(USER)
+  createdAt      DateTime       @default(now())
+  updatedAt      DateTime       @updatedAt
+  Transactions   Transactions[]
 }
 
 enum UserRole {
   ADMIN
   USER
+}
+
+model Transactions {
+  id                         String            @id @default(uuid())
+  destination_wallet_address String            @unique
+  transaction_type           TransactionType
+  amount                     BigInt
+  currency                   String
+  status                     TransactionStatus
+  user                       User              @relation(fields: [user_id], references: [id])
+  user_id                    String
+  createdAt                  DateTime          @default(now())
+  updatedAt                  DateTime          @updatedAt
+}
+
+enum TransactionType {
+  DEPOSIT
+  PAYMENT
+}
+
+enum TransactionStatus {
+  PENDING
+  SETTLED
 }
