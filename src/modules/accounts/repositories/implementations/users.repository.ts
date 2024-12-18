@@ -33,6 +33,16 @@ class UsersRepository implements IUsersRepository {
     return user;
   }
 
+  async findByNickname(nickname: string): Promise<User | null> {
+    const user = await this.prisma.user.findUnique({
+      where: {
+        nickname
+      }
+    });
+
+    return user;
+  }
+
   async findByWalletAddress(wallet_address: string): Promise<User | null> {
     const user = await this.prisma.user.findUnique({
       where: {
