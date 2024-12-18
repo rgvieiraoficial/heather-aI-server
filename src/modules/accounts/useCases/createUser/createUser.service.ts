@@ -20,9 +20,11 @@ export class CreateUserService {
 
   async execute({ nickname, wallet_address, account_type, password }: IRequest): Promise<User> {
 
-    const userAlreadyExists = await this.usersRepository.findByWalletAddress(wallet_address);
+    const userAlreadyExists = await this.usersRepository.findByNickname(nickname);
 
-    if (userAlreadyExists) {
+    const walletAlreadyExists = await this.usersRepository.findByWalletAddress(wallet_address);
+
+    if (userAlreadyExists || walletAlreadyExists) {
       throw new HttpException('User already exists!', 400);
     }
 
