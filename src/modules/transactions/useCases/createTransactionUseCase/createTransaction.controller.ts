@@ -1,21 +1,13 @@
 import { Body, Controller, HttpCode, HttpStatus, Post, UseGuards } from '@nestjs/common';
-import { TransactionType, TransactionStatus } from '@prisma/client';
 
 import { AuthGuard } from '../../../../auth/auth.guard';
 import { User, IuserPayload } from '../../../../auth/decorators/user.decorator';
 
 import { CreateTransactionService } from './createTransaction.service';
 
-import { jsonFormatter } from '../../../../helpers/jsonFormatter';
+import { CreateTransactionDto } from '../../dtos/createTransaction.dto';
 
-interface IRequest {
-  destination_wallet_address: string;
-  transaction_type: TransactionType;
-  amount: number;
-  currency: string;
-  status: TransactionStatus;
-  user_id: string;
-}
+import { jsonFormatter } from '../../../../helpers/jsonFormatter';
 
 @Controller()
 export class CreateTransactionController {
@@ -27,7 +19,7 @@ export class CreateTransactionController {
   async handle(
     @User()
     user: IuserPayload,
-    @Body() { destination_wallet_address, transaction_type, amount, currency, status }: IRequest): Promise<Object> {
+    @Body() { destination_wallet_address, transaction_type, amount, currency, status }: CreateTransactionDto): Promise<Object> {
     const { sub: user_id } = user;
 
     const data = await this.createTransactionService.execute({
