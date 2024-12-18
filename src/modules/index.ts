@@ -6,6 +6,7 @@ import { AuthenticateUserModule } from './accounts/useCases/authenticateUser/aut
 
 export const modules = [
   HelloWorldEventModule,
+  AuthenticateUserModule,
   CreateUserModule,
   RouterModule.register([
     { path: '/', module: HelloWorldEventModule },
