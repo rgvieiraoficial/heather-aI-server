@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 
 import { PrismaModule } from '../../../../lib/prisma/prisma.module';
-import { TransactionsRepository } from '../../repositores/implementations/transactions.repository';
+import { TransactionsRepository } from '../../repositories/implementations/transactions.repository';
 import { ListTransactionsController } from './listTransactions.controller';
 import { ListTransactionsService } from './listTransactions.service';
 

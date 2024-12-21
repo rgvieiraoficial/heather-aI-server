@@ -2,7 +2,7 @@ import { HttpException, Inject, Injectable } from '@nestjs/common';
 import { Transactions, TransactionType, TransactionStatus } from '@prisma/client';
 
 import { IUsersRepository } from '../../../accounts/repositories/IUsersRepository';
-import { ITransactionsRepository } from '../../repositores/ITransactionsRepository';
+import { ITransactionsRepository } from '../../repositories/ITransactionsRepository';
 
 interface IRequest {
   destination_wallet_address: string;

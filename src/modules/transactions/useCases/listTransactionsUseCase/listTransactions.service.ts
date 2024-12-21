@@ -1,7 +1,7 @@
 import { Inject, Injectable } from '@nestjs/common';
 import { Transactions } from '@prisma/client';
 
-import { ITransactionsRepository } from '../../repositores/ITransactionsRepository';
+import { ITransactionsRepository } from '../../repositories/ITransactionsRepository';
 
 interface IRequest {
   user_id: string;

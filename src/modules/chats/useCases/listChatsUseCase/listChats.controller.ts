@@ -3,13 +3,13 @@ import { Controller, HttpCode, HttpStatus, Get, UseGuards } from '@nestjs/common
 import { AuthGuard } from '../../../../auth/auth.guard';
 import { User, IuserPayload } from '../../../../auth/decorators/user.decorator';
 
-import { ListTransactionsService } from './listTransactions.service';
+import { ListChatsService } from './listChats.service';
 
 import { jsonFormatter } from '../../../../helpers/jsonFormatter';
 
 @Controller()
-export class ListTransactionsController {
-  constructor(private listTransactionsService: ListTransactionsService) { }
+export class ListChatsController {
+  constructor(private listChatsService: ListChatsService) { }
 
   @HttpCode(HttpStatus.CREATED)
   @UseGuards(AuthGuard)
@@ -20,7 +20,7 @@ export class ListTransactionsController {
   ): Promise<Object> {
     const { sub: user_id } = user;
 
-    const data = await this.listTransactionsService.execute({ user_id });
+    const data = await this.listChatsService.execute({ user_id });
 
     return jsonFormatter(data);
   }
