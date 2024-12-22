@@ -1,4 +1,4 @@
-import { Body, Controller, HttpCode, HttpStatus, Post, UseGuards } from '@nestjs/common';
+import { Body, Controller, HttpCode, HttpStatus, Header, Post, UseGuards } from '@nestjs/common';
 
 import { AuthGuard } from '../../../../auth/auth.guard';
 import { User, IuserPayload } from '../../../../auth/decorators/user.decorator';
@@ -16,6 +16,7 @@ export class CreateTransactionController {
   @HttpCode(HttpStatus.CREATED)
   @UseGuards(AuthGuard)
   @Post()
+  @Header('Content-Type', 'application/json')
   async handle(
     @User()
     user: IuserPayload,

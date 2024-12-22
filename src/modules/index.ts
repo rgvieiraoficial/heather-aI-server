@@ -14,6 +14,8 @@ import { ListMessagesModule } from './messages/useCases/listMessagesUseCase/list
 import { CreateTransactionModule } from './transactions/useCases/createTransactionUseCase/createTransaction.module';
 import { ListTransactionsModule } from './transactions/useCases/listTransactionsUseCase/listTransactions.module';
 
+import { WebsocketsModule } from './websockets/websockets.module';
+
 export const modules = [
   HelloWorldEventModule,
   AuthenticateUserModule,
@@ -24,6 +26,7 @@ export const modules = [
   ListMessagesModule,
   CreateTransactionModule,
   ListTransactionsModule,
+  WebsocketsModule,
   RouterModule.register([
     { path: '/', module: HelloWorldEventModule },
     {
