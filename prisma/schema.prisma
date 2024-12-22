@@ -56,19 +56,23 @@ enum TransactionStatus {
 }
 
 model Chat {
-  id       String     @id @default(uuid())
-  title    String
-  user     User       @relation(fields: [user_id], references: [id])
-  user_id  String
-  Messages Messages[]
+  id        String     @id @default(uuid())
+  title     String
+  user      User       @relation(fields: [user_id], references: [id])
+  user_id   String
+  Messages  Messages[]
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
 }
 
 model Messages {
-  id      String       @id @default(uuid())
-  role    MessagesRole
-  content String
-  chat    Chat         @relation(fields: [chat_id], references: [id])
-  chat_id String
+  id        String       @id @default(uuid())
+  role      MessagesRole
+  content   String
+  chat      Chat         @relation(fields: [chat_id], references: [id])
+  chat_id   String
+  createdAt DateTime     @default(now())
+  updatedAt DateTime     @updatedAt
 }
 
 enum MessagesRole {
