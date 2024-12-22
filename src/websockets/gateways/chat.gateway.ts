@@ -2,7 +2,7 @@ import { UseFilters, UsePipes, ValidationPipe } from '@nestjs/common';
 import { WebSocketGateway, WebSocketServer, ConnectedSocket, MessageBody, SubscribeMessage } from '@nestjs/websockets';
 import { Socket, Server } from 'socket.io';
 
-import { WebsocketsExceptionFilter } from './ws-exception.filter';
+import { WebsocketsExceptionFilter } from '../validators/ws-exception.filter';
 
 interface IRequest {
   nickname: string;
