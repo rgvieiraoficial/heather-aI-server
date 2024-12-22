@@ -1,4 +1,4 @@
-import { Controller, HttpCode, HttpStatus, Get, UseGuards } from '@nestjs/common';
+import { Controller, HttpCode, HttpStatus, Get, Header, UseGuards } from '@nestjs/common';
 
 import { AuthGuard } from '../../../../auth/auth.guard';
 import { User, IuserPayload } from '../../../../auth/decorators/user.decorator';
@@ -14,6 +14,7 @@ export class ListChatsController {
   @HttpCode(HttpStatus.CREATED)
   @UseGuards(AuthGuard)
   @Get()
+  @Header('Content-Type', 'application/json')
   async handle(
     @User()
     user: IuserPayload

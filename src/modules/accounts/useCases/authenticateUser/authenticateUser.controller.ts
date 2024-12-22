@@ -1,4 +1,4 @@
-import { Body, Controller, Post, HttpCode, HttpStatus } from '@nestjs/common';
+import { Body, Controller, Post, HttpCode, HttpStatus, Header } from '@nestjs/common';
 
 import { AuthenticateUserService } from './authenticateUser.service';
 
@@ -10,6 +10,7 @@ export class AuthenticateUserController {
 
   @HttpCode(HttpStatus.OK)
   @Post()
+  @Header('Content-Type', 'application/json')
   async handle(@Body() { wallet_address, password }: AuthDto): Promise<Object> {
     const data = await this.authenticateUserService.execute({ wallet_address, password });
 

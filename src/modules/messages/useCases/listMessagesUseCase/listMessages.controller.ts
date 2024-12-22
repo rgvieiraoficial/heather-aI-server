@@ -1,4 +1,4 @@
-import { Controller, HttpCode, HttpStatus, Get, Param, UseGuards } from '@nestjs/common';
+import { Controller, HttpCode, HttpStatus, Get, Header, Param, UseGuards } from '@nestjs/common';
 
 import { AuthGuard } from '../../../../auth/auth.guard';
 
@@ -15,6 +15,7 @@ export class ListChatsController {
   @HttpCode(HttpStatus.CREATED)
   @UseGuards(AuthGuard)
   @Get()
+  @Header('Content-Type', 'application/json')
   async handle(
     @Param() { chat_id }: ListMessagesDto
   ): Promise<Object> {
