@@ -2,10 +2,10 @@ import { Module } from '@nestjs/common';
 import { APP_PIPE } from '@nestjs/core'
 import { ZodValidationPipe } from 'nestjs-zod'
 
-import { modules } from './modules';
+import { routes } from './routes';
 
 @Module({
-  imports: modules,
+  imports: routes,
   providers: [
     {
       provide: APP_PIPE,

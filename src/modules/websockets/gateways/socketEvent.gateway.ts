@@ -1,8 +1,8 @@
-import { UseFilters, UsePipes, ValidationPipe } from '@nestjs/common';
+import { UseFilters } from '@nestjs/common';
 import { WebSocketGateway, WebSocketServer, ConnectedSocket, MessageBody, SubscribeMessage } from '@nestjs/websockets';
 import { Socket, Server } from 'socket.io';
 
-import { WebsocketsExceptionFilter } from './ws-exception.filter';
+import { WebsocketsExceptionFilter } from '../validators/ws-exception.filter';
 
 interface IRequest {
   nickname: string;
@@ -15,12 +15,12 @@ interface IRequest {
   },
 })
 @UseFilters(new WebsocketsExceptionFilter())
-export class ChatGateway {
+export class SocketEventGateway {
   @WebSocketServer()
   server: Server;
 
   @SubscribeMessage('ai-chat')
-  handle(
+  handleAiChat(
     @MessageBody() { nickname, message }: IRequest,
     @ConnectedSocket() socket: Socket,
   ) {
