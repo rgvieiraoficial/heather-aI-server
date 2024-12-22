@@ -7,14 +7,11 @@ import { transactionsModules, transactionsRoutes } from './transactions.routes';
 
 import { HelloWorldEventModule } from '../modules/hello/useCases/helloWorldEvent/helloWorldEvent.module';
 
-import { WebsocketsModule } from '../modules/websockets/websockets.module';
-
 const modules = [
   ...accountsModules,
   ...chatsModules,
   ...messagesModules,
   ...transactionsModules,
-  WebsocketsModule
 ]
 
 const httpRoutes = [

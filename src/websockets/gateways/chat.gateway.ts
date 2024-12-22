@@ -1,4 +1,4 @@
-import { UseFilters } from '@nestjs/common';
+import { UseFilters, UsePipes, ValidationPipe } from '@nestjs/common';
 import { WebSocketGateway, WebSocketServer, ConnectedSocket, MessageBody, SubscribeMessage } from '@nestjs/websockets';
 import { Socket, Server } from 'socket.io';
 
@@ -15,12 +15,12 @@ interface IRequest {
   },
 })
 @UseFilters(new WebsocketsExceptionFilter())
-export class SocketEventGateway {
+export class ChatGateway {
   @WebSocketServer()
   server: Server;
 
   @SubscribeMessage('ai-chat')
-  handleAiChat(
+  handle(
     @MessageBody() { nickname, message }: IRequest,
     @ConnectedSocket() socket: Socket,
   ) {
