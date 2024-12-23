@@ -5,13 +5,14 @@ import { chatsModules, chatsRoutes } from './chats.routes';
 import { messagesModules, messagesRoutes } from './messages.routes';
 import { transactionsModules, transactionsRoutes } from './transactions.routes';
 
-import { HelloWorldEventModule } from '../modules/hello/useCases/helloWorldEvent/helloWorldEvent.module';
+import { healthCheckModules, healthCheckRoutes } from './healthCheck.routes'
 
 const modules = [
   ...accountsModules,
   ...chatsModules,
   ...messagesModules,
   ...transactionsModules,
+  ...healthCheckModules,
 ]
 
 const httpRoutes = [
@@ -19,7 +20,7 @@ const httpRoutes = [
   ...chatsRoutes,
   ...messagesRoutes,
   ...transactionsRoutes,
-  { path: '/', module: HelloWorldEventModule }
+  ...healthCheckRoutes
 ]
 
 export const routes = [

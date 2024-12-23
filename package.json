@@ -1,5 +1,5 @@
 {
-  "name": "42bits-saas-backend-nest-template",
+  "name": "heather-ai-server",
   "version": "0.0.1",
   "description": "",
   "author": "yamirenato <renatog.gonalves9@gmail.com>",
@@ -16,7 +16,8 @@
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
-    "test:e2e": "jest --config ./test/jest-e2e.json"
+    "test:e2e": "jest --config ./test/jest-e2e.json",
+    "ollama:setup": "ts-node ./src/modules/ollama/setupOllama.ts"
   },
   "dependencies": {
     "@nestjs/common": "^10.0.0",
@@ -28,6 +29,7 @@
     "@prisma/client": "^5.16.1",
     "bcryptjs": "^2.4.3",
     "nestjs-zod": "^4.2.0",
+    "ollama": "^0.5.11",
     "reflect-metadata": "^0.2.0",
     "rxjs": "^7.8.1",
     "uuid": "^10.0.0",

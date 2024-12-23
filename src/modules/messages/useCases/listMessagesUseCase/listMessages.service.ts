@@ -5,6 +5,7 @@ import { IMessagesRepository } from '../../repositories/IMessagesRepository';
 
 interface IRequest {
   chat_id: string;
+  take?: number;
 }
 
 @Injectable()
@@ -14,8 +15,8 @@ export class ListMessagesService {
     private readonly messagesRepository: IMessagesRepository
   ) { }
 
-  async execute({ chat_id }: IRequest): Promise<Messages[]> {
-    const response = await this.messagesRepository.list(chat_id);
+  async execute({ chat_id, take }: IRequest): Promise<Messages[]> {
+    const response = take ? await this.messagesRepository.list(chat_id, take) : await this.messagesRepository.list(chat_id);
 
     return response;
   }

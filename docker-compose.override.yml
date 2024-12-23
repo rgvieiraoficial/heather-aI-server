@@ -14,11 +14,12 @@ services:
       - 5436:5432
     env_file: '.env.local'
 
+  ollama-service:
+    env_file: '.env.local'
+
   pgadmin:
     image: dpage/pgadmin4:6.15
-    environment:
-      PGADMIN_DEFAULT_EMAIL: 'admin@admin.com'
-      PGADMIN_DEFAULT_PASSWORD: 'admin#6563'
+    env_file: '.env.local'
     ports:
       - '9825:80'
     depends_on:

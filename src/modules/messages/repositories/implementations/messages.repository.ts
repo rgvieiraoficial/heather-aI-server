@@ -32,14 +32,28 @@ class MessagesRepository implements IMessagesRepository {
     return data;
   }
 
-  async list(chat_id: string): Promise<Messages[] | null> {
-    const data = await this.prisma.messages.findMany({
-      where: {
-        chat_id
-      }
-    });
+  async list(chat_id: string, take?: number): Promise<Messages[] | null> {
+    if (take) {
+      const data = await this.prisma.messages.findMany({
+        take,
+        where: {
+          chat_id
+        },
+        orderBy: {
+          createdAt: 'desc',
+        },
+      });
 
-    return data;
+      return data;
+    } else {
+      const data = await this.prisma.messages.findMany({
+        where: {
+          chat_id
+        }
+      });
+
+      return data;
+    }
   }
 }
 

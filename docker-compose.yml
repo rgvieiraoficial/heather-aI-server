@@ -24,10 +24,25 @@ services:
     volumes:
       - pgdata:/data/postgres
 
+  ollama-service:
+    image: ollama/ollama
+    container_name: 'ollama'
+    pull_policy: always
+    tty: true
+    env_file: '.env'
+    ports:
+      - 9745:11434
+    networks:
+      - app-tier
+    volumes:
+      - ollama:/root/.ollama
+
 networks:
   app-tier:
     driver: bridge
 
 volumes:
+  ollama:
+    driver: local
   pgdata:
     driver: local
