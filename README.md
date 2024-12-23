@@ -110,11 +110,11 @@ npx prisma migrate dev
 ### Access the server's "Health Check" page.
 
 ```bash
-http://localhost:PORT
+http://localhost:PORT/health-check
 
 Example:
 
-http://localhost:3334
+http://localhost:3334/health-check
 ```
 
 ## Authors

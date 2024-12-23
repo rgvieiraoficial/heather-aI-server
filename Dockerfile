@@ -14,4 +14,4 @@ RUN npx prisma generate
 
 EXPOSE 3354
 
-CMD ["yarn","start"]
+CMD ["yarn", "start"]
